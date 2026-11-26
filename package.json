@@ -1,0 +1,19 @@
+{
+  "name": "angular-node-starter",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "engines": {
+    "node": ">=22.22.3"
+  },
+  "scripts": {
+    "dev": "concurrently --kill-others --names api,web \"npm run dev --workspace=server\" \"npm run start --workspace=client\"",
+    "build": "npm run build --workspace=client",
+    "start:api": "npm run dev --workspace=server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
